@@ -34,8 +34,8 @@ namespace Radionics
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.smd = new System.Windows.Forms.RadioButton();
+            this.normal = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
@@ -89,27 +89,29 @@ namespace Radionics
             this.button5.Text = "Герметичність (IP)";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // smd
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(212, 95);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(55, 21);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "smd";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.smd.AutoSize = true;
+            this.smd.Location = new System.Drawing.Point(212, 95);
+            this.smd.Name = "smd";
+            this.smd.Size = new System.Drawing.Size(55, 21);
+            this.smd.TabIndex = 5;
+            this.smd.TabStop = true;
+            this.smd.Text = "smd";
+            this.smd.UseVisualStyleBackColor = true;
+            this.smd.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // normal
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(366, 94);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(99, 21);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "звичайний";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.normal.AutoSize = true;
+            this.normal.Location = new System.Drawing.Point(366, 94);
+            this.normal.Name = "normal";
+            this.normal.Size = new System.Drawing.Size(99, 21);
+            this.normal.TabIndex = 6;
+            this.normal.TabStop = true;
+            this.normal.Text = "звичайний";
+            this.normal.UseVisualStyleBackColor = true;
+            this.normal.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -121,6 +123,7 @@ namespace Radionics
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "керамічний";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton4
             // 
@@ -132,6 +135,7 @@ namespace Radionics
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "плівчастний";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton5
             // 
@@ -143,6 +147,7 @@ namespace Radionics
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "0.02 - 0.2 мм";
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton6
             // 
@@ -154,6 +159,7 @@ namespace Radionics
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "> 0.2 мм";
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label1
             // 
@@ -186,8 +192,8 @@ namespace Radionics
             this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.normal);
+            this.Controls.Add(this.smd);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -208,8 +214,8 @@ namespace Radionics
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton smd;
+        private System.Windows.Forms.RadioButton normal;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton5;
