@@ -64,7 +64,7 @@ namespace Radionics
                 {
                     e.Handled = true;
                 }
-                if (text.CompareTo("")==0 && ch=='0')
+                if (text.CompareTo("")==0 && ch=='0' || text.Length > 1 && ch != 0)
                 {
                     e.Handled = true;
                 }
@@ -73,7 +73,17 @@ namespace Radionics
 
         private void submit_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox2.Text.Substring(0, 2) + (textBox2.Text.Length - 2).ToString();
+            if (textBox2.Text.Length >= 2)
+            {
+                string value1 = textBox2.Text[0].ToString();
+                string value2 = textBox2.Text[1].ToString();
+                string value3 = Math.Log10(Convert.ToInt32(textBox2.Text) / Convert.ToDouble(value1 + value2)).ToString();
+                textBox1.Text = value1 + value2 + value3;
+            }
+            else
+                textBox1.Text = "0" + textBox2.Text + "0";
+            
+            
         }
     }
 }
