@@ -98,37 +98,41 @@ namespace Radionics
             // 
             // comboBox1
             // 
+            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(497, 74);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
             // 
             // comboBox2
             // 
+            this.comboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(497, 116);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.Size = new System.Drawing.Size(121, 23);
             this.comboBox2.TabIndex = 6;
             this.comboBox2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
             // 
             // comboBox3
             // 
+            this.comboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(497, 157);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
+            this.comboBox3.Size = new System.Drawing.Size(121, 23);
             this.comboBox3.TabIndex = 7;
             this.comboBox3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
             // 
             // comboBox4
             // 
+            this.comboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(497, 199);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 24);
+            this.comboBox4.Size = new System.Drawing.Size(121, 23);
             this.comboBox4.TabIndex = 8;
             this.comboBox4.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
             // 
@@ -257,6 +261,7 @@ namespace Radionics
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(121, 24);
             this.comboBox5.TabIndex = 22;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // label10
             // 

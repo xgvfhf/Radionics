@@ -46,34 +46,45 @@ namespace Radionics
 
         private void submit_Click(object sender, EventArgs e)
         {
-            string text = textBox1.Text;
-
-            List<char> arr = new List<char>();
-            if (text.Contains("."))
+            try
             {
-                for (int i = 0; i < text.Length; i++)
-                {
-                    if (text[i].CompareTo('0') != 0 && text[i].CompareTo('.') != 0)
-                    {
-                        arr.Add(text[i]);
-                    }
-                }
-                ValueOfLine1 = arr[0].ToString();
-                ValueOfLine2 = arr[1].ToString();
-                ValueOfLine3 = Math.Log10(Convert.ToDouble(text, CultureInfo.InvariantCulture) / Convert.ToDouble(ValueOfLine1 + ValueOfLine2)).ToString();
-                SetColor(Convert.ToInt32(ValueOfLine1), Convert.ToInt32(ValueOfLine2), Convert.ToInt32(ValueOfLine3));
-            }
-            else if (text.Length == 1)
-                SetColor(Convert.ToInt32(text), Convert.ToInt32("0"), Convert.ToInt32("-1"));
+                string text = textBox1.Text;
 
-            else
-                SetColor(Convert.ToInt32(text[0].ToString()), Convert.ToInt32(text[0].ToString()), Convert.ToInt32(text.Length - 2));
+                List<char> arr = new List<char>();
+               
+
+                if (text.Contains("."))
+                {
+                    for (int i = 0; i < text.Length; i++)
+                    {
+                        if (text[i].CompareTo('0') != 0 && text[i].CompareTo('.') != 0)
+                        {
+                            arr.Add(text[i]);
+                        }
+                    }
+                    ValueOfLine1 = arr[0].ToString();
+                    ValueOfLine2 = arr[1].ToString();
+                    ValueOfLine3 = Math.Log10(Convert.ToDouble(text, CultureInfo.InvariantCulture) / Convert.ToDouble(ValueOfLine1 + ValueOfLine2)).ToString();
+                    SetColor(Convert.ToInt32(ValueOfLine1), Convert.ToInt32(ValueOfLine2), Convert.ToInt32(ValueOfLine3));
+                }
+                else if (text.Length == 1)
+                    SetColor(Convert.ToInt32(text), Convert.ToInt32("0"), Convert.ToInt32("-1"));
+
+                else
+                    SetColor(Convert.ToInt32(text[0].ToString()), Convert.ToInt32(text[0].ToString()), Convert.ToInt32(text.Length - 2));
+
+                
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Введіть усі параметри!");
+            }
         }
 
         private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
             var combobox = sender as ComboBox;
-            SolidBrush brush = new SolidBrush((Color)(Compliance[(string)combobox.Items[e.Index]][1]));
+            SolidBrush brush = new SolidBrush((Color)Compliance[(combobox.Items[e.Index]).ToString()][1]);
             e.Graphics.FillRectangle(brush, e.Bounds);
             e.Graphics.DrawString((string)combobox.Items[e.Index], e.Font, Brushes.Black, e.Bounds);
             switch (combobox.Name)
@@ -102,6 +113,17 @@ namespace Radionics
                         ValueOfLine4 = " ± 10% ";
                     return;
             }
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox5.SelectedIndex == 0)
+            
+
+                line4.BackColor = Color.Gold;
+            
+            else
+                line4.BackColor = Color.Silver;
         }
 
         void SetColor(int value1, int value2, int value3)
