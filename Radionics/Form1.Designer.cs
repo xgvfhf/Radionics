@@ -29,65 +29,70 @@ namespace Radionics
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.resistor = new System.Windows.Forms.Button();
+            this.condenser = new System.Windows.Forms.Button();
+            this.fuse = new System.Windows.Forms.Button();
+            this.inductance = new System.Windows.Forms.Button();
+            this.tightness = new System.Windows.Forms.Button();
             this.smd = new System.Windows.Forms.RadioButton();
             this.normal = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.ceramic = new System.Windows.Forms.RadioButton();
+            this.tape = new System.Windows.Forms.RadioButton();
+            this.small_diam = new System.Windows.Forms.RadioButton();
+            this.big_diam = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // resistor
             // 
-            this.button1.Location = new System.Drawing.Point(61, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Резистор";
-            this.button1.UseVisualStyleBackColor = true;
+            this.resistor.Location = new System.Drawing.Point(61, 83);
+            this.resistor.Name = "resistor";
+            this.resistor.Size = new System.Drawing.Size(111, 42);
+            this.resistor.TabIndex = 0;
+            this.resistor.Text = "Резистор";
+            this.resistor.UseVisualStyleBackColor = true;
+            this.resistor.Click += new System.EventHandler(this.resistor_Click);
             // 
-            // button2
+            // condenser
             // 
-            this.button2.Location = new System.Drawing.Point(61, 135);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 42);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Конденсатор";
-            this.button2.UseVisualStyleBackColor = true;
+            this.condenser.Location = new System.Drawing.Point(61, 135);
+            this.condenser.Name = "condenser";
+            this.condenser.Size = new System.Drawing.Size(111, 42);
+            this.condenser.TabIndex = 1;
+            this.condenser.Text = "Конденсатор";
+            this.condenser.UseVisualStyleBackColor = true;
+            this.condenser.Click += new System.EventHandler(this.condenser_Click);
             // 
-            // button3
+            // fuse
             // 
-            this.button3.Location = new System.Drawing.Point(61, 188);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 42);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Запобіжник";
-            this.button3.UseVisualStyleBackColor = true;
+            this.fuse.Location = new System.Drawing.Point(61, 188);
+            this.fuse.Name = "fuse";
+            this.fuse.Size = new System.Drawing.Size(111, 42);
+            this.fuse.TabIndex = 2;
+            this.fuse.Text = "Запобіжник";
+            this.fuse.UseVisualStyleBackColor = true;
+            this.fuse.Click += new System.EventHandler(this.fuse_Click);
             // 
-            // button4
+            // inductance
             // 
-            this.button4.Location = new System.Drawing.Point(61, 248);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(111, 42);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Індуктивність";
-            this.button4.UseVisualStyleBackColor = true;
+            this.inductance.Location = new System.Drawing.Point(61, 249);
+            this.inductance.Name = "inductance";
+            this.inductance.Size = new System.Drawing.Size(111, 42);
+            this.inductance.TabIndex = 3;
+            this.inductance.Text = "Індуктивність";
+            this.inductance.UseVisualStyleBackColor = true;
+            this.inductance.Click += new System.EventHandler(this.inductance_Click);
             // 
-            // button5
+            // tightness
             // 
-            this.button5.Location = new System.Drawing.Point(61, 307);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(117, 42);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Герметичність (IP)";
-            this.button5.UseVisualStyleBackColor = true;
+            this.tightness.Location = new System.Drawing.Point(61, 307);
+            this.tightness.Name = "tightness";
+            this.tightness.Size = new System.Drawing.Size(117, 42);
+            this.tightness.TabIndex = 4;
+            this.tightness.Text = "Герметичність (IP)";
+            this.tightness.UseVisualStyleBackColor = true;
+            this.tightness.Click += new System.EventHandler(this.tightness_Click);
             // 
             // smd
             // 
@@ -99,7 +104,6 @@ namespace Radionics
             this.smd.TabStop = true;
             this.smd.Text = "smd";
             this.smd.UseVisualStyleBackColor = true;
-            this.smd.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // normal
             // 
@@ -111,55 +115,50 @@ namespace Radionics
             this.normal.TabStop = true;
             this.normal.Text = "звичайний";
             this.normal.UseVisualStyleBackColor = true;
-            this.normal.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton3
+            // ceramic
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(212, 146);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(104, 21);
-            this.radioButton3.TabIndex = 7;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "керамічний";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.ceramic.AutoSize = true;
+            this.ceramic.Location = new System.Drawing.Point(212, 146);
+            this.ceramic.Name = "ceramic";
+            this.ceramic.Size = new System.Drawing.Size(104, 21);
+            this.ceramic.TabIndex = 7;
+            this.ceramic.TabStop = true;
+            this.ceramic.Text = "керамічний";
+            this.ceramic.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // tape
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(366, 146);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(109, 21);
-            this.radioButton4.TabIndex = 8;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "плівчастний";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.tape.AutoSize = true;
+            this.tape.Location = new System.Drawing.Point(366, 146);
+            this.tape.Name = "tape";
+            this.tape.Size = new System.Drawing.Size(109, 21);
+            this.tape.TabIndex = 8;
+            this.tape.TabStop = true;
+            this.tape.Text = "плівчастний";
+            this.tape.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // small_diam
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(212, 199);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(112, 21);
-            this.radioButton5.TabIndex = 9;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "0.02 - 0.2 мм";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.small_diam.AutoSize = true;
+            this.small_diam.Location = new System.Drawing.Point(212, 199);
+            this.small_diam.Name = "small_diam";
+            this.small_diam.Size = new System.Drawing.Size(112, 21);
+            this.small_diam.TabIndex = 9;
+            this.small_diam.TabStop = true;
+            this.small_diam.Text = "0.02 - 0.2 мм";
+            this.small_diam.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // big_diam
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(366, 199);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(83, 21);
-            this.radioButton6.TabIndex = 10;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "> 0.2 мм";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.big_diam.AutoSize = true;
+            this.big_diam.Location = new System.Drawing.Point(366, 199);
+            this.big_diam.Name = "big_diam";
+            this.big_diam.Size = new System.Drawing.Size(83, 21);
+            this.big_diam.TabIndex = 10;
+            this.big_diam.TabStop = true;
+            this.big_diam.Text = "> 0.2 мм";
+            this.big_diam.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -188,17 +187,17 @@ namespace Radionics
             this.ClientSize = new System.Drawing.Size(534, 399);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton6);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.big_diam);
+            this.Controls.Add(this.small_diam);
+            this.Controls.Add(this.tape);
+            this.Controls.Add(this.ceramic);
             this.Controls.Add(this.normal);
             this.Controls.Add(this.smd);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tightness);
+            this.Controls.Add(this.inductance);
+            this.Controls.Add(this.fuse);
+            this.Controls.Add(this.condenser);
+            this.Controls.Add(this.resistor);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -209,17 +208,17 @@ namespace Radionics
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button resistor;
+        private System.Windows.Forms.Button condenser;
+        private System.Windows.Forms.Button fuse;
+        private System.Windows.Forms.Button inductance;
+        private System.Windows.Forms.Button tightness;
         private System.Windows.Forms.RadioButton smd;
         private System.Windows.Forms.RadioButton normal;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton ceramic;
+        private System.Windows.Forms.RadioButton tape;
+        private System.Windows.Forms.RadioButton small_diam;
+        private System.Windows.Forms.RadioButton big_diam;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
