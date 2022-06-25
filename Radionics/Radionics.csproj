@@ -52,6 +52,7 @@
     <Compile Include="Big_diametr.Designer.cs">
       <DependentUpon>Big_diametr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ceramic.cs" />
     <Compile Include="Ceramic_cond.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +85,7 @@
     <Compile Include="Small_diamtr.Designer.cs">
       <DependentUpon>Small_diamtr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Smd.cs" />
     <Compile Include="Smd_res.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +104,9 @@
     <Compile Include="Tightns.Designer.cs">
       <DependentUpon>Tightns.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ceramic_cond.resx">
+      <DependentUpon>Ceramic_cond.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +126,9 @@
     <EmbeddedResource Include="Smd_res.resx">
       <DependentUpon>Smd_res.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tape_cond.resx">
+      <DependentUpon>Tape_cond.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -139,6 +147,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\smd_res.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Сeram_con.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tape_cond.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

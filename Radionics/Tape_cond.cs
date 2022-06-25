@@ -16,5 +16,10 @@ namespace Radionics
         {
             InitializeComponent();
         }
+
+        private void Tape_cond_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

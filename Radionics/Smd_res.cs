@@ -38,20 +38,8 @@ namespace Radionics
 
         private void Count_Click(object sender, EventArgs e)
         {
-            string text = textBox1.Text;
-            if (text.Length == 3)
-            {
-                string value1;
-                string value2 = text[2].ToString();
-                if (text.StartsWith("0"))
-                    value1 = text[1].ToString();
+            label2.Text = new Smd().DefineParameters(textBox1.Text);
 
-                else
-                    value1 = text.Substring(0, 2);
-                label2.Text = (Convert.ToInt32(value1) * Math.Pow(10, Convert.ToInt32(value2))).ToString() + " Oм";
-            }
-            else
-                MessageBox.Show("Потрібно 3 числа!");
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -73,17 +61,15 @@ namespace Radionics
 
         private void submit_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length >= 2)
+            if (textBox2.Text.CompareTo("") != 0)
             {
-                string value1 = textBox2.Text[0].ToString();
-                string value2 = textBox2.Text[1].ToString();
-                string value3 = Math.Log10(Convert.ToInt32(textBox2.Text) / Convert.ToDouble(value1 + value2)).ToString();
-                textBox1.Text = value1 + value2 + value3;
+                if (textBox2.Text.Length >= 2)
+                    textBox1.Text = new Smd().GetCode(textBox2.Text);
+                else
+                    textBox1.Text = "0" + textBox2.Text + "0";
             }
             else
-                textBox1.Text = "0" + textBox2.Text + "0";
-            
-            
+                MessageBox.Show("Введіть значення!");
         }
     }
 }

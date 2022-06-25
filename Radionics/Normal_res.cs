@@ -51,29 +51,31 @@ namespace Radionics
                 string text = textBox1.Text;
 
                 List<char> arr = new List<char>();
-               
-
-                if (text.Contains("."))
+                if (text.CompareTo("0")!=0)
                 {
-                    for (int i = 0; i < text.Length; i++)
+
+                    if (text.Contains("."))
                     {
-                        if (text[i].CompareTo('0') != 0 && text[i].CompareTo('.') != 0)
+                        for (int i = 0; i < text.Length; i++)
                         {
-                            arr.Add(text[i]);
+                            if (text[i].CompareTo('0') != 0 && text[i].CompareTo('.') != 0)
+                            {
+                                arr.Add(text[i]);
+                            }
                         }
+                        arr.Add('0');
+                        ValueOfLine1 = arr[0].ToString();
+                        ValueOfLine2 = arr[1].ToString();
+                        ValueOfLine3 = Math.Log10(Convert.ToDouble(text, CultureInfo.InvariantCulture) / Convert.ToDouble(ValueOfLine1 + ValueOfLine2)).ToString();
+                        SetColor(Convert.ToInt32(ValueOfLine1), Convert.ToInt32(ValueOfLine2), Convert.ToInt32(ValueOfLine3));
                     }
-                    ValueOfLine1 = arr[0].ToString();
-                    ValueOfLine2 = arr[1].ToString();
-                    ValueOfLine3 = Math.Log10(Convert.ToDouble(text, CultureInfo.InvariantCulture) / Convert.ToDouble(ValueOfLine1 + ValueOfLine2)).ToString();
-                    SetColor(Convert.ToInt32(ValueOfLine1), Convert.ToInt32(ValueOfLine2), Convert.ToInt32(ValueOfLine3));
+                    else if (text.Length == 1)
+                        SetColor(Convert.ToInt32(text), 0, -1);
+
+                    else
+                        SetColor(Convert.ToInt32(text[0].ToString()), Convert.ToInt32(text[0].ToString()), Convert.ToInt32(text.Length - 2));
                 }
-                else if (text.Length == 1)
-                    SetColor(Convert.ToInt32(text), Convert.ToInt32("0"), Convert.ToInt32("-1"));
-
-                else
-                    SetColor(Convert.ToInt32(text[0].ToString()), Convert.ToInt32(text[0].ToString()), Convert.ToInt32(text.Length - 2));
-
-                
+             
             }
             catch(Exception)
             {
