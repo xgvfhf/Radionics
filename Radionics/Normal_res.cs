@@ -150,36 +150,31 @@ namespace Radionics
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
+
             char ch = e.KeyChar;
             string text = textBox1.Text;
 
-            bool isDigit = (Char.IsDigit(ch));
-            bool digitAfterNull = (text.StartsWith("0") && !text.Contains(".") && Char.IsDigit(ch));
-            bool doubleComma = (ch != '.' || text.IndexOf(".") != -1);
-            bool startsWithComa = (text == "" && ch == '.');
-            bool moreThenTwoDigitsAfterComa = (text.StartsWith("0") && text.Contains(".") && (text.Length - text.IndexOf(".")) > 2);
-            bool moreThenTwoDigitBeforeOrAfterComa = (text.IndexOf(".") > 1 || text.Length - text.IndexOf(".") > 1);
-            bool containsComa = text.Contains(".");
-            bool startsWithNull = text.Contains("0");
-            bool notNullAfterTwoDigits = !text.Contains(".") && text.Length >= 2 && ch != '0';
+            Ceramic cr = new Ceramic();
+            cr.SetLimit(ch, text);
 
             if (ch != 8)
             {
-                if (!isDigit || digitAfterNull)
+                if (!cr.isDigit || cr.digitAfterNull)
                 {
-                    if (doubleComma)
+                    if (cr.doubleComma)
                     {
 
                         e.Handled = true;
                     }
                 }
 
-                if (startsWithComa || notNullAfterTwoDigits || moreThenTwoDigitsAfterComa)
+                if (cr.startsWithComa || cr.notNullAfterTwoDigits || cr.moreThenTwoDigitsAfterComa)
                 {
                     e.Handled = true;
                 }
 
-                if (!startsWithNull && containsComa && moreThenTwoDigitBeforeOrAfterComa || text.Length > 10)
+                if (!cr.startsWithNull && cr.containsComa && cr.moreThenTwoDigitBeforeOrAfterComa || text.Length > 10)
                 {
                     e.Handled = true;
                 }

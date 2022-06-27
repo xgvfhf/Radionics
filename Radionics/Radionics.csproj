@@ -110,6 +110,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Induct.resx">
+      <DependentUpon>Induct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Normal_res.resx">
       <DependentUpon>Normal_res.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +126,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Small_diamtr.resx">
+      <DependentUpon>Small_diamtr.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Smd_res.resx">
       <DependentUpon>Smd_res.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tape_cond.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Induct.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

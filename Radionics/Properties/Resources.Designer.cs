@@ -63,6 +63,16 @@ namespace Radionics.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Induct {
+            get {
+                object obj = ResourceManager.GetObject("Induct", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap resistor {
             get {
                 object obj = ResourceManager.GetObject("resistor", resourceCulture);

@@ -10,6 +10,17 @@ namespace Radionics
 {
     class Ceramic : Smd
     {
+        public bool isDigit { get; set; }
+        public bool digitAfterNull { get; set; }
+        public bool doubleComma { get; set; }
+        public bool startsWithComa { get; set; }
+        public bool moreThenTwoDigitsAfterComa { get; set; }
+        public bool moreThenTwoDigitBeforeOrAfterComa { get; set; }
+        public bool containsComa { get; set; }
+        public bool startsWithNull { get; set; }
+        public bool notNullAfterTwoDigits { get; set; }
+
+
         public override string GetValue()
         {
             if (Convert.ToInt32(value2) == 8)
@@ -60,6 +71,18 @@ namespace Radionics
 
                 else
                     return text[0].ToString() + text[1].ToString() + (text.Length - 2).ToString();
+        }
+        public void SetLimit(char ch, string text)
+        {
+             isDigit = (Char.IsDigit(ch));
+            digitAfterNull = (text.StartsWith("0") && !text.Contains(".") && Char.IsDigit(ch));
+            doubleComma = (ch != '.' || text.IndexOf(".") != -1);
+            startsWithComa = (text == "" && ch == '.');
+             moreThenTwoDigitsAfterComa = (text.StartsWith("0") && text.Contains(".") && (text.Length - text.IndexOf(".")) > 2);
+             moreThenTwoDigitBeforeOrAfterComa = (text.IndexOf(".") > 1 || text.Length - text.IndexOf(".") > 1);
+             containsComa = text.Contains(".");
+             startsWithNull = text.Contains("0");
+             notNullAfterTwoDigits = !text.Contains(".") && text.Length >= 2 && ch != '0';
         }
            
             

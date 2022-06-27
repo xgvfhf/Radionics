@@ -59,7 +59,7 @@ namespace Radionics
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 252);
+            this.label2.Location = new System.Drawing.Point(128, 273);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 2;
@@ -67,7 +67,7 @@ namespace Radionics
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 266);
+            this.label3.Location = new System.Drawing.Point(11, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 17);
             this.label3.TabIndex = 3;
@@ -104,10 +104,12 @@ namespace Radionics
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(184, 122);
+            this.textBox1.Location = new System.Drawing.Point(166, 119);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(52, 15);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox2
             // 
@@ -115,6 +117,7 @@ namespace Radionics
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 8;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // button1
             // 
@@ -124,6 +127,7 @@ namespace Radionics
             this.button1.TabIndex = 9;
             this.button1.Text = "Розрахувати";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -133,6 +137,7 @@ namespace Radionics
             this.button2.TabIndex = 10;
             this.button2.Text = "Підтвердити";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -146,10 +151,11 @@ namespace Radionics
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(242, 122);
+            this.comboBox1.Location = new System.Drawing.Point(224, 119);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(21, 24);
+            this.comboBox1.Size = new System.Drawing.Size(49, 24);
             this.comboBox1.TabIndex = 11;
             // 
             // label8
@@ -166,7 +172,7 @@ namespace Radionics
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(134, 421);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(21, 24);
+            this.comboBox2.Size = new System.Drawing.Size(50, 24);
             this.comboBox2.TabIndex = 13;
             // 
             // Tape_cond
