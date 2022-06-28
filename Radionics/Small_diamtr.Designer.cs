@@ -60,7 +60,7 @@ namespace Radionics
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 100);
+            this.label2.Location = new System.Drawing.Point(44, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 17);
             this.label2.TabIndex = 1;
@@ -72,9 +72,9 @@ namespace Radionics
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(132, 199);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 20);
+            this.label3.Size = new System.Drawing.Size(206, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Розрахунок діаметр";
+            this.label3.Text = "Розрахунок діаметра";
             // 
             // label4
             // 
@@ -107,7 +107,7 @@ namespace Radionics
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(51, 347);
+            this.label7.Location = new System.Drawing.Point(59, 349);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 17);
             this.label7.TabIndex = 6;
@@ -116,7 +116,7 @@ namespace Radionics
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 148);
+            this.label8.Location = new System.Drawing.Point(30, 145);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 17);
             this.label8.TabIndex = 7;
@@ -152,6 +152,7 @@ namespace Radionics
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 22);
             this.textBox1.TabIndex = 11;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress_1);
             // 
             // textBox2
             // 
@@ -159,6 +160,7 @@ namespace Radionics
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(121, 22);
             this.textBox2.TabIndex = 12;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress_1);
             // 
             // amperage
             // 
@@ -171,7 +173,7 @@ namespace Radionics
             // diametr
             // 
             this.diametr.AutoSize = true;
-            this.diametr.Location = new System.Drawing.Point(133, 347);
+            this.diametr.Location = new System.Drawing.Point(176, 349);
             this.diametr.Name = "diametr";
             this.diametr.Size = new System.Drawing.Size(0, 17);
             this.diametr.TabIndex = 14;
@@ -194,6 +196,7 @@ namespace Radionics
             this.button2.TabIndex = 16;
             this.button2.Text = "Розрахувати";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Small_diamtr
             // 
