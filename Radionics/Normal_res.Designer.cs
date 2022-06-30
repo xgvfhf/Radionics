@@ -34,10 +34,10 @@ namespace Radionics
             this.line4 = new System.Windows.Forms.Label();
             this.line2 = new System.Windows.Forms.Label();
             this.line3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.ColorOfLine1 = new System.Windows.Forms.ComboBox();
+            this.ColorOfLine2 = new System.Windows.Forms.ComboBox();
+            this.ColorOfLine3 = new System.Windows.Forms.ComboBox();
+            this.ColorOfLine4 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,10 +48,10 @@ namespace Radionics
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.count = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.resistance = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.submit = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.accuracy = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -96,45 +96,45 @@ namespace Radionics
             this.line3.Size = new System.Drawing.Size(9, 40);
             this.line3.TabIndex = 4;
             // 
-            // comboBox1
+            // ColorOfLine1
             // 
-            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(497, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
+            this.ColorOfLine1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ColorOfLine1.FormattingEnabled = true;
+            this.ColorOfLine1.Location = new System.Drawing.Point(497, 74);
+            this.ColorOfLine1.Name = "ColorOfLine1";
+            this.ColorOfLine1.Size = new System.Drawing.Size(121, 23);
+            this.ColorOfLine1.TabIndex = 5;
+            this.ColorOfLine1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ColorOfLine1_DrawItem);
             // 
-            // comboBox2
+            // ColorOfLine2
             // 
-            this.comboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(497, 116);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 6;
-            this.comboBox2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
+            this.ColorOfLine2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ColorOfLine2.FormattingEnabled = true;
+            this.ColorOfLine2.Location = new System.Drawing.Point(497, 116);
+            this.ColorOfLine2.Name = "ColorOfLine2";
+            this.ColorOfLine2.Size = new System.Drawing.Size(121, 23);
+            this.ColorOfLine2.TabIndex = 6;
+            this.ColorOfLine2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ColorOfLine1_DrawItem);
             // 
-            // comboBox3
+            // ColorOfLine3
             // 
-            this.comboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(497, 157);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 23);
-            this.comboBox3.TabIndex = 7;
-            this.comboBox3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
+            this.ColorOfLine3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ColorOfLine3.FormattingEnabled = true;
+            this.ColorOfLine3.Location = new System.Drawing.Point(497, 157);
+            this.ColorOfLine3.Name = "ColorOfLine3";
+            this.ColorOfLine3.Size = new System.Drawing.Size(121, 23);
+            this.ColorOfLine3.TabIndex = 7;
+            this.ColorOfLine3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ColorOfLine1_DrawItem);
             // 
-            // comboBox4
+            // ColorOfLine4
             // 
-            this.comboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(497, 199);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 23);
-            this.comboBox4.TabIndex = 8;
-            this.comboBox4.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
+            this.ColorOfLine4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ColorOfLine4.FormattingEnabled = true;
+            this.ColorOfLine4.Location = new System.Drawing.Point(497, 199);
+            this.ColorOfLine4.Name = "ColorOfLine4";
+            this.ColorOfLine4.Size = new System.Drawing.Size(121, 23);
+            this.ColorOfLine4.TabIndex = 8;
+            this.ColorOfLine4.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ColorOfLine1_DrawItem);
             // 
             // label1
             // 
@@ -227,13 +227,13 @@ namespace Radionics
             this.count.UseVisualStyleBackColor = true;
             this.count.Click += new System.EventHandler(this.count_Click);
             // 
-            // textBox1
+            // resistance
             // 
-            this.textBox1.Location = new System.Drawing.Point(257, 391);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 22);
-            this.textBox1.TabIndex = 19;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.resistance.Location = new System.Drawing.Point(257, 391);
+            this.resistance.Name = "resistance";
+            this.resistance.Size = new System.Drawing.Size(163, 22);
+            this.resistance.TabIndex = 19;
+            this.resistance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.resistance_KeyPress);
             // 
             // label9
             // 
@@ -254,14 +254,14 @@ namespace Radionics
             this.submit.UseVisualStyleBackColor = true;
             this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
-            // comboBox5
+            // accuracy
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(257, 419);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 24);
-            this.comboBox5.TabIndex = 22;
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            this.accuracy.FormattingEnabled = true;
+            this.accuracy.Location = new System.Drawing.Point(257, 419);
+            this.accuracy.Name = "accuracy";
+            this.accuracy.Size = new System.Drawing.Size(121, 24);
+            this.accuracy.TabIndex = 22;
+            this.accuracy.SelectedIndexChanged += new System.EventHandler(this.accuracy_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -278,10 +278,10 @@ namespace Radionics
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 463);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.accuracy);
             this.Controls.Add(this.submit);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.resistance);
             this.Controls.Add(this.count);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -292,10 +292,10 @@ namespace Radionics
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ColorOfLine4);
+            this.Controls.Add(this.ColorOfLine3);
+            this.Controls.Add(this.ColorOfLine2);
+            this.Controls.Add(this.ColorOfLine1);
             this.Controls.Add(this.line3);
             this.Controls.Add(this.line2);
             this.Controls.Add(this.line4);
@@ -318,10 +318,10 @@ namespace Radionics
         private System.Windows.Forms.Label line4;
         private System.Windows.Forms.Label line2;
         private System.Windows.Forms.Label line3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox ColorOfLine1;
+        private System.Windows.Forms.ComboBox ColorOfLine2;
+        private System.Windows.Forms.ComboBox ColorOfLine3;
+        private System.Windows.Forms.ComboBox ColorOfLine4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -332,10 +332,10 @@ namespace Radionics
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button count;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox resistance;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button submit;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox accuracy;
         private System.Windows.Forms.Label label10;
     }
 }

@@ -36,13 +36,25 @@ namespace Radionics
         string[] Values = Compliance.Values.ToArray();
         private void Tape_cond_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.AddRange(Keys);
-            comboBox2.Items.AddRange(Values);
+            accuracy_literal.Items.AddRange(Keys);
+            accuracy_percent.Items.AddRange(Values);
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void Count_Click(object sender, EventArgs e)
         {
-            string text = textBox1.Text;
+            try
+            {
+                result.Text = new Ceramic().DefineParameters(code.Text) + Compliance[accuracy_literal.SelectedItem.ToString()];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Введіть всі параметри");
+            }
+        }
+
+        private void code_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string text = code.Text;
             char ch = e.KeyChar;
             if (ch != 8)
             {
@@ -53,10 +65,10 @@ namespace Radionics
             }
         }
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void enterCopacity_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            string text = textBox2.Text;
+            string text = enterCopacity.Text;
 
             Ceramic cr = new Ceramic();
             cr.SetLimit(ch, text);
@@ -84,37 +96,23 @@ namespace Radionics
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void submit_Click(object sender, EventArgs e)
         {
+            string text = enterCopacity.Text;
             try
             {
-              
-                label2.Text = new Ceramic().DefineParameters(textBox1.Text) + Compliance[comboBox1.SelectedItem.ToString()];
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Введіть всі параметри");
-            }
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string text = textBox2.Text;
-            try
-            {
-                if (text.CompareTo("0")!=0)
+                if (text.CompareTo("0") != 0)
                 {
-                    textBox1.Text = new Ceramic().GetCode(text);
-                    comboBox1.Text = Keys[comboBox2.SelectedIndex];
+                    code.Text = new Ceramic().GetCode(text);
+                    accuracy_literal.Text = Keys[accuracy_percent.SelectedIndex];
                 }
-                
+
             }
             catch (Exception)
             {
 
                 MessageBox.Show("Введіть коректні значення!");
             }
-        }       
+        }
     }
 }

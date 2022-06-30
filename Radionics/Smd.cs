@@ -32,7 +32,7 @@ namespace Radionics
         {
             value1 = text[0].ToString();
             value2 = text[1].ToString();
-            string value3 = Math.Log10(Convert.ToInt32(text) / Convert.ToDouble(value1 + value2)).ToString();
+            string value3 = Math.Log10(Convert.ToDouble(text) / Convert.ToDouble(value1 + value2)).ToString();
             return value1 + value2 + value3;
         }
 

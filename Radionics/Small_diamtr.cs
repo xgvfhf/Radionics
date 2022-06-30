@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 namespace Radionics
@@ -26,64 +21,11 @@ namespace Radionics
 
         private void Small_diamtr_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.AddRange(Compliance.Keys.ToArray());
-            comboBox2.Items.AddRange(Compliance.Keys.ToArray());
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (comboBox1.SelectedItem != null)
-                {
-                    double diam = Convert.ToDouble(textBox1.Text, CultureInfo.InvariantCulture);
-                    double amper = (diam - 0.005) / Compliance[comboBox1.SelectedItem.ToString()];
-                    if (diam >= 0.02 && diam <= 0.2)
-                    {
-                        amperage.Text = String.Format("{0:N2}", amper);
-                    }
-                    else
-                        MessageBox.Show("Діаметр знаходиться за межами інтервалу 0.02-0.2 мм");
-                }
-                else
-                    MessageBox.Show("Введіть всі дані");
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Введіть всі дані");
-            }             
-                
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (comboBox2.SelectedItem != null)
-                {
-                    double amper = Convert.ToDouble(textBox2.Text, CultureInfo.InvariantCulture);
-                    double diam = amper * Compliance[comboBox2.SelectedItem.ToString()] + 0.005;
-                    if (diam >= 0.02 && diam <= 0.2)
-                    {
-                        diametr.Text = String.Format("{0:N2}", diam);
-                    }
-                    else
-                        MessageBox.Show("Таке значення сили струму недопутиме для даного типу проводу,спробуйте вид > 0.2mm");
-                }
-                else
-                    MessageBox.Show("Введіть всі дані");
-
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Введіть всі дані");
-            }
-            
-        }
-                       
-        private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
+            material1.Items.AddRange(Compliance.Keys.ToArray());
+            material2.Items.AddRange(Compliance.Keys.ToArray());
+        } 
+        
+        private void diam_KeyPress(object sender, KeyPressEventArgs e)
         {
             var txtbx = sender as TextBox;
             char ch = e.KeyChar;
@@ -103,6 +45,57 @@ namespace Radionics
 
                 }
 
+            }
+        }
+
+        private void Count_amper_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (material1.SelectedItem != null)
+                {
+                    double diam = Convert.ToDouble(this.diam.Text, CultureInfo.InvariantCulture);
+                    double amper = (diam - 0.005) / Compliance[material1.SelectedItem.ToString()];
+                    if (diam >= 0.02 && diam <= 0.2)
+                    {
+                        amperage.Text = String.Format("{0:N2}", amper);
+                    }
+                    else
+                        MessageBox.Show("Діаметр знаходиться за межами інтервалу 0.02-0.2 мм");
+                }
+                else
+                    MessageBox.Show("Введіть всі дані");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Введіть всі дані");
+            }
+        }
+
+        private void Count_diam_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (material2.SelectedItem != null)
+                {
+                    double amper = Convert.ToDouble(textBox2.Text, CultureInfo.InvariantCulture);
+                    double diam = amper * Compliance[material2.SelectedItem.ToString()] + 0.005;
+                    if (diam >= 0.02 && diam <= 0.2)
+                    {
+                        diametr.Text = String.Format("{0:N2}", diam);
+                    }
+                    else
+                        MessageBox.Show("Таке значення сили струму недопутиме для даного типу проводу,спробуйте вид > 0.2mm");
+                }
+                else
+                    MessageBox.Show("Введіть всі дані");
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Введіть всі дані");
             }
         }
     }

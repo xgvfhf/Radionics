@@ -45,39 +45,38 @@ namespace Radionics
         string[] voda_keys = voda2.Keys.ToArray();
         private void Tightns_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.AddRange(mechanich.Keys.ToArray());
-            comboBox2.Items.AddRange(voda2.Keys.ToArray());
-            comboBox3.Items.AddRange(mechanich.Values.ToArray());
-            comboBox4.Items.AddRange(voda2.Values.ToArray());
-        }
+            ipValue1.Items.AddRange(mechanich.Keys.ToArray());
+            ipValue2.Items.AddRange(voda2.Keys.ToArray());
+            mechProtect.Items.AddRange(mechanich.Values.ToArray());
+            vodaProtect.Items.AddRange(voda2.Values.ToArray());
+        }     
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ipValue1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var cmbbx = sender as ComboBox;
             switch (cmbbx.Name)
             {
-                case "comboBox1":
+                case "ipValue1":
                     mechanichni.Text = mechanich[cmbbx.SelectedItem.ToString()];
                     break;
-                case "comboBox2":
+                case "ipValue2":
                     voda1.Text = voda2[cmbbx.SelectedItem.ToString()];
                     break;
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Count_Click(object sender, EventArgs e)
         {
             try
             {
-                string value1 = mech_keys[comboBox3.SelectedIndex];
-                string value2 = voda_keys[comboBox4.SelectedIndex];
+                string value1 = mech_keys[mechProtect.SelectedIndex];
+                string value2 = voda_keys[vodaProtect.SelectedIndex];
                 result.Text = value1 + value2;
             }
             catch (Exception)
             {
                 MessageBox.Show("Введіть всі дані!");
             }
-            
         }
     }
 }

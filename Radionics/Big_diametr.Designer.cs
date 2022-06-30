@@ -29,14 +29,14 @@ namespace Radionics
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Count_diam = new System.Windows.Forms.Button();
+            this.Count_amper = new System.Windows.Forms.Button();
             this.diametr = new System.Windows.Forms.Label();
             this.amperage = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.amper = new System.Windows.Forms.TextBox();
+            this.diam = new System.Windows.Forms.TextBox();
+            this.material2 = new System.Windows.Forms.ComboBox();
+            this.material1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,25 +48,25 @@ namespace Radionics
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // Count_diam
             // 
-            this.button2.Location = new System.Drawing.Point(278, 364);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 32);
-            this.button2.TabIndex = 33;
-            this.button2.Text = "Розрахувати";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Count_diam.Location = new System.Drawing.Point(278, 364);
+            this.Count_diam.Name = "Count_diam";
+            this.Count_diam.Size = new System.Drawing.Size(110, 32);
+            this.Count_diam.TabIndex = 33;
+            this.Count_diam.Text = "Розрахувати";
+            this.Count_diam.UseVisualStyleBackColor = true;
+            this.Count_diam.Click += new System.EventHandler(this.Count_diam_Click);
             // 
-            // button1
+            // Count_amper
             // 
-            this.button1.Location = new System.Drawing.Point(290, 168);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 38);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Розрахувати";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Count_amper.Location = new System.Drawing.Point(290, 168);
+            this.Count_amper.Name = "Count_amper";
+            this.Count_amper.Size = new System.Drawing.Size(109, 38);
+            this.Count_amper.TabIndex = 32;
+            this.Count_amper.Text = "Розрахувати";
+            this.Count_amper.UseVisualStyleBackColor = true;
+            this.Count_amper.Click += new System.EventHandler(this.Count_amper_Click);
             // 
             // diametr
             // 
@@ -84,37 +84,37 @@ namespace Radionics
             this.amperage.Size = new System.Drawing.Size(0, 17);
             this.amperage.TabIndex = 30;
             // 
-            // textBox2
+            // amper
             // 
-            this.textBox2.Location = new System.Drawing.Point(165, 322);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 22);
-            this.textBox2.TabIndex = 29;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.amper.Location = new System.Drawing.Point(165, 322);
+            this.amper.Name = "amper";
+            this.amper.Size = new System.Drawing.Size(121, 22);
+            this.amper.TabIndex = 29;
+            this.amper.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.diam_KeyPress);
             // 
-            // textBox1
+            // diam
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 22);
-            this.textBox1.TabIndex = 28;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.diam.Location = new System.Drawing.Point(147, 123);
+            this.diam.Name = "diam";
+            this.diam.Size = new System.Drawing.Size(121, 22);
+            this.diam.TabIndex = 28;
+            this.diam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.diam_KeyPress);
             // 
-            // comboBox2
+            // material2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(182, 274);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 27;
+            this.material2.FormattingEnabled = true;
+            this.material2.Location = new System.Drawing.Point(182, 274);
+            this.material2.Name = "material2";
+            this.material2.Size = new System.Drawing.Size(121, 24);
+            this.material2.TabIndex = 27;
             // 
-            // comboBox1
+            // material1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(182, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 26;
+            this.material1.FormattingEnabled = true;
+            this.material1.Location = new System.Drawing.Point(182, 83);
+            this.material1.Name = "material1";
+            this.material1.Size = new System.Drawing.Size(121, 24);
+            this.material1.TabIndex = 26;
             // 
             // label9
             // 
@@ -203,14 +203,14 @@ namespace Radionics
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 423);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Count_diam);
+            this.Controls.Add(this.Count_amper);
             this.Controls.Add(this.diametr);
             this.Controls.Add(this.amperage);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.amper);
+            this.Controls.Add(this.diam);
+            this.Controls.Add(this.material2);
+            this.Controls.Add(this.material1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -230,14 +230,14 @@ namespace Radionics
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Count_diam;
+        private System.Windows.Forms.Button Count_amper;
         private System.Windows.Forms.Label diametr;
         private System.Windows.Forms.Label amperage;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox amper;
+        private System.Windows.Forms.TextBox diam;
+        private System.Windows.Forms.ComboBox material2;
+        private System.Windows.Forms.ComboBox material1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

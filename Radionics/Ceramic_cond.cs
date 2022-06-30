@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Radionics
@@ -20,25 +13,12 @@ namespace Radionics
         private void Ceramic_cond_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            string text = textBox1.Text;
-            char ch = e.KeyChar;
-            if (ch != 8)
-            {
-                if (!Char.IsDigit(ch) || text.Length > 2 || text.CompareTo("")==0 && ch=='0')
-                {
-                    e.Handled = true;
-                }
-            }
-        }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        }              
+     
+        private void enterCapacity_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            string text = textBox2.Text;
+            string text = enterCapacity.Text;
 
 
             Ceramic cr = new Ceramic();
@@ -67,20 +47,31 @@ namespace Radionics
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void code_KeyPress(object sender, KeyPressEventArgs e)
         {
-            label2.Text = new Ceramic().DefineParameters(textBox1.Text);
-
+            string text = code.Text;
+            char ch = e.KeyChar;
+            if (ch != 8)
+            {
+                if (!Char.IsDigit(ch) || text.Length > 2 || text.CompareTo("") == 0 && ch == '0')
+                {
+                    e.Handled = true;
+                }
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Count_Click(object sender, EventArgs e)
         {
-            string text = textBox2.Text;
+            result.Text = new Ceramic().DefineParameters(code.Text);
+        }
+
+        private void submit_Click(object sender, EventArgs e)
+        {
+            string text = enterCapacity.Text;
             if (text.CompareTo("0") != 0 && text.CompareTo("") != 0)
-            { textBox1.Text = new Ceramic().GetCode(text); }
+            { code.Text = new Ceramic().GetCode(text); }
             else
                 MessageBox.Show("Введіть коректні значення!");
-              
         }
     }
 }

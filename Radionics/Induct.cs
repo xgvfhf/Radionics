@@ -16,20 +16,11 @@ namespace Radionics
         string ValueOfLine1, ValueOfLine2, ValueOfLine3, ValueOfLine4, result;
         enum ColorsNamesLine { Silver = -2, Gold, Black, Brown, Red, Orange, Yellow, Green, Blue, Violet, Gray, White };
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (ValueOfLine1 != null && ValueOfLine2 != null && ValueOfLine3 != null && ValueOfLine4 != null)
-            {
-                result = (Convert.ToDouble(ValueOfLine1 + ValueOfLine2) * Math.Pow(10, Convert.ToDouble(ValueOfLine3))).ToString();
-                my_result.Text = result + " мкГн" + ValueOfLine4;
-            }
-        }
-
         private void submit_Click(object sender, EventArgs e)
         {
             try
             {
-                string text = textBox1.Text;
+                string text = enterIndct.Text;
 
                 List<char> arr = new List<char>();
                 if (text.CompareTo("0") != 0)
@@ -71,7 +62,7 @@ namespace Radionics
             line3.BackColor = (Color)Compliance[((ColorsNamesLine)value3).ToString()][1];
         }
 
-        private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
+        private void ColorOfLine1_DrawItem(object sender, DrawItemEventArgs e)
         {
             var combobox = sender as ComboBox;
             SolidBrush brush = new SolidBrush((Color)Compliance[(combobox.Items[e.Index]).ToString()][1]);
@@ -79,22 +70,22 @@ namespace Radionics
             e.Graphics.DrawString((string)combobox.Items[e.Index], e.Font, Brushes.Black, e.Bounds);
             switch (combobox.Name)
             {
-                case "comboBox1":
+                case "ColorOfLine1":
                     line1.BackColor = brush.Color;
                     ValueOfLine1 = Compliance[(string)combobox.Items[e.Index]][0].ToString();
                     return;
 
-                case "comboBox2":
+                case "ColorOfLine2":
                     line2.BackColor = brush.Color;
                     ValueOfLine2 = Compliance[(string)combobox.Items[e.Index]][0].ToString();
                     return;
 
-                case "comboBox3":
+                case "ColorOfLine3":
                     line3.BackColor = brush.Color;
                     ValueOfLine3 = Compliance[(string)combobox.Items[e.Index]][0].ToString();
                     return;
 
-                case "comboBox4":
+                case "ColorOfLine4":
                     line4.BackColor = brush.Color;
 
                     if (line4.BackColor == Color.Gold)
@@ -107,10 +98,19 @@ namespace Radionics
             }
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void Count_Click(object sender, EventArgs e)
+        {
+            if (ValueOfLine1 != null && ValueOfLine2 != null && ValueOfLine3 != null && ValueOfLine4 != null)
+            {
+                result = (Convert.ToDouble(ValueOfLine1 + ValueOfLine2) * Math.Pow(10, Convert.ToDouble(ValueOfLine3))).ToString();
+                my_result.Text = result + " мкГн" + ValueOfLine4;
+            }
+        }
+
+        private void enterIndct_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            string text = textBox1.Text;
+            string text = enterIndct.Text;
 
             Ceramic cr = new Ceramic();
             cr.SetLimit(ch, text);
@@ -138,14 +138,12 @@ namespace Radionics
             }
         }
 
-        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        private void accuracy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox5.SelectedIndex == 0)
-
-
+            if (accuracy.SelectedIndex == 0)
                 line4.BackColor = Color.Gold;
 
-            else if(comboBox5.SelectedIndex == 1)
+            else if (accuracy.SelectedIndex == 1)
                 line4.BackColor = Color.Silver;
             else
                 line4.BackColor = Color.Black;
@@ -175,11 +173,11 @@ namespace Radionics
 
         private void Induct_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.AddRange(names.Skip(3).Take(11).ToArray());
-            comboBox2.Items.AddRange(names.Skip(2).Take(11).ToArray());
-            comboBox3.Items.AddRange(names.Skip(2).Take(4).ToArray());
-            comboBox4.Items.AddRange(names.Skip(0).Take(3).ToArray());
-            comboBox5.Items.AddRange(new string[] { "± 5%", " ± 10%" , "± 20%" });
+            ColorOfLine1.Items.AddRange(names.Skip(3).Take(11).ToArray());
+            ColorOfLine2.Items.AddRange(names.Skip(2).Take(11).ToArray());
+            ColorOfLine3.Items.AddRange(names.Skip(2).Take(4).ToArray());
+            ColorOfLine4.Items.AddRange(names.Skip(0).Take(3).ToArray());
+            accuracy.Items.AddRange(new string[] { "± 5%", " ± 10%" , "± 20%" });
         }
     }
 }

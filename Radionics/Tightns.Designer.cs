@@ -38,14 +38,14 @@ namespace Radionics
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.ipValue1 = new System.Windows.Forms.ComboBox();
+            this.ipValue2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Count = new System.Windows.Forms.Button();
             this.result = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.mechProtect = new System.Windows.Forms.ComboBox();
+            this.vodaProtect = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -130,23 +130,23 @@ namespace Radionics
             this.label9.TabIndex = 8;
             this.label9.Text = "герметичність → IP ";
             // 
-            // comboBox1
+            // ipValue1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(93, 67);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(48, 25);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.ipValue1.FormattingEnabled = true;
+            this.ipValue1.Location = new System.Drawing.Point(93, 67);
+            this.ipValue1.Name = "ipValue1";
+            this.ipValue1.Size = new System.Drawing.Size(48, 25);
+            this.ipValue1.TabIndex = 9;
+            this.ipValue1.SelectedIndexChanged += new System.EventHandler(this.ipValue1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // ipValue2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(164, 67);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(48, 25);
-            this.comboBox2.TabIndex = 10;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.ipValue2.FormattingEnabled = true;
+            this.ipValue2.Location = new System.Drawing.Point(164, 67);
+            this.ipValue2.Name = "ipValue2";
+            this.ipValue2.Size = new System.Drawing.Size(48, 25);
+            this.ipValue2.TabIndex = 10;
+            this.ipValue2.SelectedIndexChanged += new System.EventHandler(this.ipValue1_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -166,15 +166,15 @@ namespace Radionics
             this.label6.TabIndex = 12;
             this.label6.Text = "Захист від проникнення води: ";
             // 
-            // button1
+            // Count
             // 
-            this.button1.Location = new System.Drawing.Point(510, 414);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 31);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Отримати";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Count.Location = new System.Drawing.Point(510, 414);
+            this.Count.Name = "Count";
+            this.Count.Size = new System.Drawing.Size(101, 31);
+            this.Count.TabIndex = 13;
+            this.Count.Text = "Отримати";
+            this.Count.UseVisualStyleBackColor = true;
+            this.Count.Click += new System.EventHandler(this.Count_Click);
             // 
             // result
             // 
@@ -185,35 +185,35 @@ namespace Radionics
             this.result.TabIndex = 14;
             this.result.Text = " ";
             // 
-            // comboBox3
+            // mechProtect
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(249, 293);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(387, 25);
-            this.comboBox3.TabIndex = 15;
+            this.mechProtect.FormattingEnabled = true;
+            this.mechProtect.Location = new System.Drawing.Point(249, 293);
+            this.mechProtect.Name = "mechProtect";
+            this.mechProtect.Size = new System.Drawing.Size(387, 25);
+            this.mechProtect.TabIndex = 15;
             // 
-            // comboBox4
+            // vodaProtect
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(215, 337);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(408, 25);
-            this.comboBox4.TabIndex = 16;
+            this.vodaProtect.FormattingEnabled = true;
+            this.vodaProtect.Location = new System.Drawing.Point(215, 337);
+            this.vodaProtect.Name = "vodaProtect";
+            this.vodaProtect.Size = new System.Drawing.Size(408, 25);
+            this.vodaProtect.TabIndex = 16;
             // 
             // Tightns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 483);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.vodaProtect);
+            this.Controls.Add(this.mechProtect);
             this.Controls.Add(this.result);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Count);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ipValue2);
+            this.Controls.Add(this.ipValue1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -243,13 +243,13 @@ namespace Radionics
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox ipValue1;
+        private System.Windows.Forms.ComboBox ipValue2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Count;
         private System.Windows.Forms.Label result;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox mechProtect;
+        private System.Windows.Forms.ComboBox vodaProtect;
     }
 }

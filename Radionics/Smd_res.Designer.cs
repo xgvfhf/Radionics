@@ -30,13 +30,13 @@ namespace Radionics
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.code = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.resistance = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.enterResistance = new System.Windows.Forms.TextBox();
             this.Count = new System.Windows.Forms.Button();
             this.submit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,17 +53,17 @@ namespace Radionics
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // code
             // 
-            this.textBox1.BackColor = System.Drawing.Color.DimGray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(187, 117);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(63, 15);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.code.BackColor = System.Drawing.Color.DimGray;
+            this.code.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.code.ForeColor = System.Drawing.Color.White;
+            this.code.Location = new System.Drawing.Point(187, 117);
+            this.code.Name = "code";
+            this.code.Size = new System.Drawing.Size(63, 15);
+            this.code.TabIndex = 1;
+            this.code.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.code_KeyPress);
             // 
             // label1
             // 
@@ -74,13 +74,13 @@ namespace Radionics
             this.label1.TabIndex = 2;
             this.label1.Text = "Результат:";
             // 
-            // label2
+            // resistance
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(123, 230);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
-            this.label2.TabIndex = 3;
+            this.resistance.AutoSize = true;
+            this.resistance.Location = new System.Drawing.Point(123, 230);
+            this.resistance.Name = "resistance";
+            this.resistance.Size = new System.Drawing.Size(0, 17);
+            this.resistance.TabIndex = 3;
             // 
             // label3
             // 
@@ -109,13 +109,13 @@ namespace Radionics
             this.label5.TabIndex = 6;
             this.label5.Text = "Введіть опір(в Ом):";
             // 
-            // textBox2
+            // enterResistance
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 321);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 22);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.enterResistance.Location = new System.Drawing.Point(139, 321);
+            this.enterResistance.Name = "enterResistance";
+            this.enterResistance.Size = new System.Drawing.Size(167, 22);
+            this.enterResistance.TabIndex = 7;
+            this.enterResistance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enterResistance_KeyPress);
             // 
             // Count
             // 
@@ -154,13 +154,13 @@ namespace Radionics
             this.Controls.Add(this.label6);
             this.Controls.Add(this.submit);
             this.Controls.Add(this.Count);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.enterResistance);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.resistance);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.code);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Smd_res";
             this.Text = "Smd_res";
@@ -174,13 +174,13 @@ namespace Radionics
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox code;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label resistance;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox enterResistance;
         private System.Windows.Forms.Button Count;
         private System.Windows.Forms.Button submit;
         private System.Windows.Forms.Label label6;
